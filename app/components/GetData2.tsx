@@ -15,7 +15,7 @@ export default async function Home() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {allPosts.map((post) => (
           <article
-            key={post._id.toString()}
+            key={post.postId.toString()}
             className="rounded-2xl border shadow-sm p-6"
           >
             <h2 className="mb-3 text-xl font-semibold">
@@ -31,7 +31,7 @@ export default async function Home() {
               <p>Post ID: {post.postId}</p>
               {/* ✅ GET BY ID LINK */}
               <Link
-                href={`/posts/${Number(post.postId)}`}
+               href={`/posts/${post.postId}`}
                 className="text-red-600 hover:underline"
               >
                 Read more
