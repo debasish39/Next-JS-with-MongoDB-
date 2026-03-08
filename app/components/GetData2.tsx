@@ -1,10 +1,10 @@
 import Link from "next/link";
 import connectDB from "../../lib/connectDB";
 import PostModel from "../models/Post";
-
+export const dynamic = "force-dynamic";
 export default async function Home() {
   await connectDB();
-  const allPosts = await PostModel.find({}).sort({ postId: 1 });
+  const allPosts = await PostModel.find({}).sort({ postId: -1 });
 
   return (
     <div className="min-h-screen px-6 py-12">
