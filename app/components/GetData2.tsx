@@ -2,6 +2,8 @@ import Link from "next/link";
 import connectDB from "../../lib/connectDB";
 import PostModel from "../models/Post";
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
 export default async function Home() {
   await connectDB();
   const allPosts = await PostModel.find({}).sort({ postId: -1 });
